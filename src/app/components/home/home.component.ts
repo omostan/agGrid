@@ -2,8 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { AgGridNg2 } from 'ag-grid-angular';
 
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

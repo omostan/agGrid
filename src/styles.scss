@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+$ag-icons-path:"../node_modules/ag-grid-community/src/styles/icons/";
+// change odd rows background color
+$odd-row-background-color:#CFD8DC;
+// changes the border color
+$border-color: rgb(70, 192, 230);
+@import '~ag-grid-community/src/styles/ag-grid.scss';
+@import '~ag-grid-community/src/styles/ag-theme-balham.scss';

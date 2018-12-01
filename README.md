@@ -1,4 +1,4 @@
-# AgGrid with Angular 7
+# AgGrid with Angular 7 using Ngx-Restangular and HttpClient to fetch data
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 

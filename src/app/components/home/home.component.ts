@@ -43,16 +43,16 @@ rowData: any;
     //     { make: 'Porsche', model: 'Boxter', price: 72000 }
     // ];
 
-    // getCars() {
-    //   this.dataService.getCars().subscribe(
-    //     (data: any) => {
-    //       this.rowData = data;
-    //       console.log(this.rowData);
-    //     },
-    //     err => console.log(err),
-    //     () => console.log('fetched data successfully')
-    //   )
-    // }
+    getCars() {
+      this.dataService.getCars().subscribe(
+        (data: any) => {
+          this.rowData = data;
+          console.log(this.rowData);
+        },
+        err => console.log(err),
+        () => console.log('fetched data successfully')
+      )
+    }
 
     getCarsWithRest() {
       this.dataService.getCarsWithRest().subscribe(

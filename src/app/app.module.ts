@@ -8,9 +8,10 @@ import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import 'ag-grid-enterprise';
 import { RestangularModule } from 'ngx-restangular';
+import { fakeData } from './sampleRestApi';
 
 export function RestangularConfigFactory(RestangularProvider) {
-  RestangularProvider.setBaseUrl('http://localhost:3000/');
+  RestangularProvider.setBaseUrl(fakeData());
   RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer q!JLohbH4!sR4beDetlBsyL_p5n0hdKo'});
 }
 

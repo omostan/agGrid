@@ -16,7 +16,7 @@ rowData: any;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    // this.getCars();
+    // this.getCarsWithHttp();
     this.getCarsWithRest();
   }
 
@@ -41,8 +41,8 @@ rowData: any;
     //     { make: 'Porsche', model: 'Boxter', price: 72000 }
     // ];
 
-    getCars() {
-      this.dataService.getCars().subscribe(
+    getCarsWithHttp() {
+      this.dataService.getCarsWithHttp().subscribe(
         (data: any) => {
           this.rowData = data;
           console.log(this.rowData);

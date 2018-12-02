@@ -12,7 +12,7 @@ export class DataService {
 
   constructor(private http: HttpClient, private restangular: Restangular) { }
 
-  getCars(): Observable<ICars[]>{
+  getCarsWithHttp(): Observable<ICars[]>{
     // https://api.myjson.com/bins/ly7d1
     // https://api.myjson.com/bins/15psn9
     return this.http.get<ICars[]>('http://localhost:3000/cars').pipe(tap(data => {

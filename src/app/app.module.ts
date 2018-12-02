@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import 'ag-grid-enterprise';
@@ -20,7 +19,7 @@ export function RestangularConfigFactory(RestangularProvider) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    RoutingComponents
   ],
   imports: [
     BrowserModule,

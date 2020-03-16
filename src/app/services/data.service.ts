@@ -12,10 +12,10 @@ export class DataService {
 
   constructor(private http: HttpClient, private restangular: Restangular) { }
 
-  getCarsWithHttp(): Observable<ICars[]>{
+  getCarsWithHttp(): Observable<ICars[]> {
     // https://api.myjson.com/bins/ly7d1
     // https://api.myjson.com/bins/15psn9
-    return this.http.get<ICars[]>('http://localhost:3000/cars').pipe(tap(data => {
+    return this.http.get<ICars[]>('http://localhost:3000/cars').pipe(tap((data: any) => {
       return data;
     }),
     // "catchError" instead of "catch"
@@ -26,14 +26,14 @@ export class DataService {
   }
 
   getCarsWithRest() {
-    return this.restangular.all('cars/').doGET().pipe(map(data => {
+    return this.restangular.all('cars/').doGET().pipe(map((data: any) => {
       return data;
     }),
     // "catchError" instead of "catch"
     catchError(error => {
       console.log(error.message);
       return throwError(this.handleError(error.message || 'Server Error!', []));
-    }));    
+    }));
   }
 
   //#region HttpClient Error Handling
@@ -46,13 +46,13 @@ export class DataService {
    */
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-  
+
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-  
+
       // TODO: better job of transforming error for user consumption
       console.log(`${operation} failed: ${error.message}`);
-  
+
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

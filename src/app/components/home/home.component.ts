@@ -8,17 +8,12 @@ import { AgGridNg2 } from 'ag-grid-angular';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('agGrid') agGrid: AgGridNg2;
+
+  constructor(private dataService: DataService) { }
+  @ViewChild('agGrid', { static: true }) agGrid: AgGridNg2;
 
 title = 'AgGrid with Angular 7';
 rowData: any;
-
-  constructor(private dataService: DataService) { }
-
-  ngOnInit() {
-    // this.getCarsWithHttp();
-    this.getCarsWithRest();
-  }
 
     columnDefs = [
         {headerName: 'Make', field: 'make', rowGroupIndex: 0 },
@@ -35,6 +30,11 @@ rowData: any;
       }
     };
 
+  ngOnInit() {
+    // this.getCarsWithHttp();
+    this.getCarsWithRest();
+  }
+
     // rowData = [
     //     { make: 'Toyota', model: 'Celica', price: 35000 },
     //     { make: 'Ford', model: 'Mondeo', price: 32000 },
@@ -49,7 +49,7 @@ rowData: any;
         },
         err => console.log(err),
         () => console.log('fetched data successfully')
-      )
+      );
     }
 
     getCarsWithRest() {
@@ -58,9 +58,9 @@ rowData: any;
           this.rowData = data;
           console.log(this.rowData);
         },
-        err => console.log(err),
+        (err: any) => console.log(err),
         () => console.log('fetched data successfully')
-      )
+      );
     }
 
     getSelectedRows() {

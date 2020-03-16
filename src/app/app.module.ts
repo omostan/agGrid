@@ -9,7 +9,7 @@ import 'ag-grid-enterprise';
 import { RestangularModule } from 'ngx-restangular';
 import { fakeData } from './sampleRestApi';
 
-export function RestangularConfigFactory(RestangularProvider) {
+export function RestangularConfigFactory(RestangularProvider: any) {
   RestangularProvider.setBaseUrl(fakeData());
   RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer q!JLohbH4!sR4beDetlBsyL_p5n0hdKo'});
 }
